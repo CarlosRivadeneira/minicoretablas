@@ -1,0 +1,11 @@
+<h1> Listado </h1>
+
+{% for empresa in empresas %}
+    <h2>{{ empresa.nombre }}</h2>
+    <p>Total de precios: ${{ empresa.total_precio }}</p>
+    <ul>
+        {% for producto in empresa.productos.all %}
+            <li>{{ producto.nombre }} - ${{ producto.precio }}</li>
+        {% endfor %}
+    </ul>
+{% endfor %}
